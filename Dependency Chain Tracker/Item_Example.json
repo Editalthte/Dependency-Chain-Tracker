@@ -1,0 +1,38 @@
+{
+  //The unique identifier for this particular item.
+  //If multiple copies are allowed, will have a number appended to the end
+  "Item_ID": "Slingshot_1",
+
+  //How many of this item can be found
+  "Total_Copies": 3,
+
+  //Keeps track if the item is in logic or not.
+  "In_Logic": true,
+
+  //What Sphere the item was last calculated as being in.
+  //Only known if item is in logic.  This value should NOT be directly used.
+  "Sphere": 2,
+
+  //Known or potential parents.
+  "Parents": [ "Boomerang" ],
+
+  //Known children
+  "Children": {
+
+    //Children belonging solely to this item
+    "total_custody": {
+      "child_1": "Bomb_Bag_2",
+      "child_2": "Strength_1"
+    },
+
+    //Children that belong to at least one other parent
+    "co_custody": {
+      "child_1": {
+        "Item_ID": "Bow_2",
+        "shares_custody_with": [ "Deku_Shield" ]
+      }
+    }
+
+  }
+
+}

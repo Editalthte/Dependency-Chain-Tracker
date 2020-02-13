@@ -1,0 +1,54 @@
+{
+  //The unique identifier for this particular item.
+  //If multiple copies are allowed, will have a number appended to the end
+  "Item_ID": "Zelda_Song",
+
+  //How many of this item can be found
+  "Total_Copies": 1,
+
+  //Keeps track if the item is in logic or not.
+  "In_Logic": false,
+
+  //What Sphere the item was last calculated as being in.
+  //Only known if item is in logic.  This value should NOT be directly used.
+  "Sphere": null,
+
+  //Known or potential parents.
+  "Parents": {
+
+    "Parent_Set_1": {
+      "Always_Required": [ "Gerudo_Pass", "Lens_Of_Truth", "Magic_1" ],
+      "Additional_Requirement_1": {
+        "Option_1": [ "Horse Song" ],
+        "Option_2": [ "Longshot" ]
+      },
+      "Additional_Requirement_2": {
+        "Option_1": [ "Hover Boots" ],
+        "Option_2": [ "Longshot" ]
+      }
+
+    },
+    "Parent_Set_2": [ "Requiem_Of_Spirit" ]
+  },
+
+  //Known children
+  "Children": {
+
+    //Children belonging solely to this item
+    "total_custody": {
+
+      "child_1": "Bomb_Bag_2",
+      "child_2": "Strength_1"
+    },
+
+    //Children that belong to at least one other parent
+    "co_custody": {
+      "child_1": {
+        "Item_ID": "Bow_2",
+        "shares_custody_with": [ "Deku_Shield" ]
+      }
+    }
+
+  }
+
+}
