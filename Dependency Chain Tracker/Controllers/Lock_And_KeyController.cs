@@ -12,6 +12,8 @@ namespace Dependency_Chain_Tracker.Controllers
 {
     public class Lock_And_KeyController : Controller
     {
+        #region SCAFFOLDING
+        
         private readonly Dependency_Chain_TrackerContext _context;
 
         public Lock_And_KeyController(Dependency_Chain_TrackerContext context)
@@ -149,5 +151,9 @@ namespace Dependency_Chain_Tracker.Controllers
         {
             return _context.Lock_And_Key.Any(e => e.ID == id);
         }
+
+        #endregion SCAFFOLDING
+
+
     }
 }
