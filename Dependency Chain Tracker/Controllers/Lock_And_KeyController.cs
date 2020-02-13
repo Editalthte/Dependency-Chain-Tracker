@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dependency_Chain_Tracker;
 using Dependency_Chain_Tracker.Data;
+using QuikGraph;
+
+
 
 namespace Dependency_Chain_Tracker.Controllers
 {
+    using DependencyGraph = AdjacencyGraph<Lock_And_Key, TaggedEdge<Lock_And_Key, string>>;
+
     public class Lock_And_KeyController : Controller
     {
+
         #region SCAFFOLDING
-        
+
         private readonly Dependency_Chain_TrackerContext _context;
 
         public Lock_And_KeyController(Dependency_Chain_TrackerContext context)
@@ -154,6 +161,49 @@ namespace Dependency_Chain_Tracker.Controllers
 
         #endregion SCAFFOLDING
 
+        //Reponsible for kicking off the startup sequence for a "run".
+        //Calls FreshStart if it's an entirely new run, before then calling Load().
+        //Need some way to differentiate between a file path for "fresh" stuff and "existing" stuff.  Maybe naming conventions?
+        public void Start(string DIRECTORY_PATH)
+        {
+            bool isFreshStart = true;   //Add some way to determine if this is fresh or not.
 
+            if (isFreshStart)
+            { FreshStart(DIRECTORY_PATH); }  //Pass path of read-only directory for initial overhead
+
+            Load(DIRECTORY_PATH);
+
+
+        }
+
+        //Book-keeping/overhead for initial generation of JSON files (ie, multiple copies of an item that need to be generated)
+        public void FreshStart(string DIRECTORY_PATH)
+        {
+
+
+        }
+
+        //Builds the initial list of graphs, and stores it in the session/persistant storage
+        //First looks for serialized graph object to load from; will load from JSON files if it doesn't exist or fails.
+        public void Load(string DIRECTORY_PATH)
+        {
+            var mainGraph = new DependencyGraph();
+
+            //The list of graphs which drives basically all the logic.
+            //The graphs are made up of vertices of Lock_And_Key instances, which are the Items.
+            List<DependencyGraph> graphs = new List<DependencyGraph>();
+
+            //Store list into session or some other form of persistant storage
+
+            //look for serialized graph object.  If found, attempt to load from that.  If not found or fails, build the graph from the JSON files.
+            
+
+            //Since the graph objects are ultimiately in charge of managing their Lock_And_Key items,
+            //would it make sense for a wrapper class to "bake in" functions that handle it?
+
+      
+
+        }
     }
+
 }
