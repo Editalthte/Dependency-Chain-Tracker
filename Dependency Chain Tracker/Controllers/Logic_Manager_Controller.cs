@@ -14,16 +14,16 @@ using QuikGraph;
 
 namespace Dependency_Chain_Tracker.Controllers
 {
-    using DependencyGraph = AdjacencyGraph<Lock_And_Key, TaggedEdge<Lock_And_Key, string>>;
+    using Dependency_Thread = AdjacencyGraph<Randomizer_Node, TaggedEdge<Randomizer_Node, string>>;
 
-    public class Lock_And_KeyController : Controller
+    public class Logic_Manager_Controller : Controller
     {
 
         #region SCAFFOLDING
 
         private readonly Dependency_Chain_TrackerContext _context;
 
-        public Lock_And_KeyController(Dependency_Chain_TrackerContext context)
+        public Logic_Manager_Controller(Dependency_Chain_TrackerContext context)
         {
             _context = context;
         }
@@ -63,7 +63,7 @@ namespace Dependency_Chain_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TotalCopies,InLogic,Sphere")] Lock_And_Key lock_And_Key)
+        public async Task<IActionResult> Create([Bind("ID,TotalCopies,InLogic,Sphere")] Randomizer_Node lock_And_Key)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace Dependency_Chain_Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("ID,TotalCopies,InLogic,Sphere")] Lock_And_Key lock_And_Key)
+        public async Task<IActionResult> Edit(string id, [Bind("ID,TotalCopies,InLogic,Sphere")] Randomizer_Node lock_And_Key)
         {
             if (id != lock_And_Key.ID)
             {
@@ -187,11 +187,11 @@ namespace Dependency_Chain_Tracker.Controllers
         //First looks for serialized graph object to load from; will load from JSON files if it doesn't exist or fails.
         public void Load(string DIRECTORY_PATH)
         {
-            var mainGraph = new DependencyGraph();
+            var mainGraph = new Dependency_Thread();
 
             //The list of graphs which drives basically all the logic.
             //The graphs are made up of vertices of Lock_And_Key instances, which are the Items.
-            List<DependencyGraph> graphs = new List<DependencyGraph>();
+            List<Dependency_Thread> graphs = new List<Dependency_Thread>();
 
             //Store list into session or some other form of persistant storage
 

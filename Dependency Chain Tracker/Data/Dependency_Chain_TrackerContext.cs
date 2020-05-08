@@ -14,6 +14,6 @@ namespace Dependency_Chain_Tracker.Data
         {
         }
 
-        public DbSet<Dependency_Chain_Tracker.Lock_And_Key> Lock_And_Key { get; set; }
+        public DbSet<Dependency_Chain_Tracker.Randomizer_Node> Lock_And_Key { get; set; }
     }
 }
