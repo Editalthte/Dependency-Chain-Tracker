@@ -16,7 +16,6 @@ namespace Dependency_Chain_Tracker
         //Differentiates multiple copies of the same named item.  Eg, the Hookshot.
         //Of type "string" to allow for non-numeric IDs, should the need arise.
         private readonly string ID { get; }
-
         
         private readonly string key { get; }    //the key is used to quickly cross-reference between dictionary and graph entries
 
@@ -32,10 +31,5 @@ namespace Dependency_Chain_Tracker
             totalCopies = INIT_TOTAL_COPIES;
             key = name + ID;
         }
-
-        
-    
     }
-
-    
 }
