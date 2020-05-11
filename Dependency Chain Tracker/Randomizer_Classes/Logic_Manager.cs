@@ -18,8 +18,6 @@ namespace Dependency_Chain_Tracker.Randomizer_Classes
         - Cleaning up/deleting threads
         - Keeping threads up to date
         - Enforcing randomizer logic/ruleset when adding/removing items
-     
-         
     */
     public class Logic_Manager
     {
@@ -38,8 +36,5 @@ namespace Dependency_Chain_Tracker.Randomizer_Classes
         //initialize the thread dictionary with the main objective (the "in-logic" thread)
         void initialize_thread_dictionary()
         {   throw new NotImplementedException();    }
-
-
-
     }
 }

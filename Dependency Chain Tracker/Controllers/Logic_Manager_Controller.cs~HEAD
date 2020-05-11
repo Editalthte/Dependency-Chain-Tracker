@@ -197,6 +197,21 @@ namespace Dependency_Chain_Tracker.Controllers
         //First looks for serialized graph object to load from; will load from JSON files if it doesn't exist or fails.
         public void Load(string DIRECTORY_PATH)
         {
+            var mainGraph = new Dependency_Thread();
+
+            //The list of graphs which drives basically all the logic.
+            //The graphs are made up of vertices of Lock_And_Key instances, which are the Items.
+            List<Dependency_Thread> graphs = new List<Dependency_Thread>();
+
+            //Store list into session or some other form of persistant storage
+
+            //look for serialized graph object.  If found, attempt to load from that.  If not found or fails, build the graph from the JSON files.
+            
+
+            //Since the graph objects are ultimiately in charge of managing their Lock_And_Key items,
+            //would it make sense for a wrapper class to "bake in" functions that handle it?
+
+      
 
         }
     }
