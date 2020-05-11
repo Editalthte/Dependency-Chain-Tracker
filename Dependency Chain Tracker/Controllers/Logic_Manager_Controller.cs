@@ -10,6 +10,15 @@ using Dependency_Chain_Tracker;
 using Dependency_Chain_Tracker.Data;
 using QuikGraph;
 
+/*
+    Since the Logic_Thread "wrapper" has been added,
+    should this controller be nixed and replaced with
+    a corresponding Logic_Thread controller?
+
+    Presumably it would handle the management of the various logic threads.
+        >Or should that also be its own wrapper class?
+*/
+
 
 
 namespace Dependency_Chain_Tracker.Controllers
