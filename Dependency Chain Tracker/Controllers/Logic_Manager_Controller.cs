@@ -171,34 +171,7 @@ namespace Dependency_Chain_Tracker.Controllers
 
         #endregion SCAFFOLDING
 
-        //Reponsible for kicking off the startup sequence for a "run".
-        //Calls FreshStart if it's an entirely new run, before then calling Load().
-        //Need some way to differentiate between a file path for "fresh" stuff and "existing" stuff.  Maybe naming conventions?
-        public void Start(string DIRECTORY_PATH)
-        {
-            bool isFreshStart = true;   //Add some way to determine if this is fresh or not.
-
-            if (isFreshStart)
-            { FreshStart(DIRECTORY_PATH); }  //Pass path of read-only directory for initial overhead
-
-            Load(DIRECTORY_PATH);
-
-
-        }
-
-        //Book-keeping/overhead for initial generation of JSON files (ie, multiple copies of an item that need to be generated)
-        public void FreshStart(string DIRECTORY_PATH)
-        {
-
-
-        }
-
-        //Builds the initial list of graphs, and stores it in the session/persistant storage
-        //First looks for serialized graph object to load from; will load from JSON files if it doesn't exist or fails.
-        public void Load(string DIRECTORY_PATH)
-        {
-
-        }
+        
     }
 
 }

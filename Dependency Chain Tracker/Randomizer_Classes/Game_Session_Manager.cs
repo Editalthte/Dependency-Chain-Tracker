@@ -40,14 +40,17 @@ namespace Dependency_Chain_Tracker.Randomizer_Classes
         /*
             If the current "run" is entirely new, this function needs to be called.
             Responsible for creating a new save directory, generating multi-copy nodes, etc.
+
+
         */
         public void initializeNewSession()
         {
             throw new NotImplementedException();
         }
 
-        //Loads all required data from files into memory/objects
+        //Loads all required data from files into session/persistant storage
         //ie, graphs, dictionaries, etc.
+        //First looks for serialized graph and dictionary objects to load from; will load from JSON files if it doesn't exist or fails.
         public void load()
         {
             throw new NotImplementedException();
